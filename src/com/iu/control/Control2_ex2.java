@@ -18,8 +18,29 @@ public class Control2_ex2 {
 		
 		System.out.println("입력한 숫자"+num);
 		
-		ch = (char)(ch+num);
+		int result =ch+num;
+		
+		//소문자가 범위를 벗어났을 때
+		if(result>122) {	// if(result> 'z')도 가능
+			result = result - 122;
+			//result = result - 'z'-1;
+			result = 96 + result;
+			//result = 'a'+result;
+ 		}else
+		
+		//대문자가 범위를 벗어났을 때
+		if(result>90 && result < 97) { //if(result > 'Z' && result <'a')
+			System.out.println("대문자 영역");
+			result = result - 90;
+			//result - result-'Z'-1;
+			result = 64 +result;
+			//result = 'Z'+result;
+		}
+		
+		ch = (char)result;
 		System.out.println("ch :" + ch);
+		//num: 2 ch:z
+		
 		
 		
 		//if문으로 써보자면 만약 num 값을 입력받았어 > 알파벳도 입력받았어 > 그럼 num +ch
