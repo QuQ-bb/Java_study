@@ -21,7 +21,7 @@ public class Loop4_ex1 {
 		System.out.println("초를 입력해주세요.");
 		int ss = scan.nextInt();
 		
-	//이제 이걸 어케 쓰냐구 ㅇㅅㅇ 반복문이 잘 돌다가 멈추는거잖아 그럼
+		//이제 이걸 어케 쓰냐구 ㅇㅅㅇ 반복문이 잘 돌다가 멈추는거잖아 그럼
 		//입력을 받기-그 후 반복문이 돌아감 - 해당 조건에 마주치면 반복문 종료
 		//돌리다가~ 입력한 숫자를 만난다면 반복문 종료
 		
@@ -29,7 +29,7 @@ public class Loop4_ex1 {
 			
 			for(int s=0; s<60; s++) {
 				System.out.println(m+" 분 "+ s+" 초 ");
-				if(ss==s) {
+				if(mm==m && ss==s) {	//초가 지정된 분까지는 멈추지 않아야 한다.
 					break;
 				}
 			}//안쪽 for
