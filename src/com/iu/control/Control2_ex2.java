@@ -33,6 +33,7 @@ public class Control2_ex2 {
 		// => num:1 출력:b 
 		// => num:2 출력:c
 		
+		//home
 		
 	}
 
