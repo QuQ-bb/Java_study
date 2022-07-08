@@ -1,4 +1,4 @@
-package com.iu.control;
+package com.iu.loop;
 
 import java.util.Scanner;
 
