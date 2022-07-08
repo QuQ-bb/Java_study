@@ -25,18 +25,37 @@ public class Loop4_ex1 {
 		//입력을 받기-그 후 반복문이 돌아감 - 해당 조건에 마주치면 반복문 종료
 		//돌리다가~ 입력한 숫자를 만난다면 반복문 종료
 		
+//		for(int m=0; m<60; m++) {
+//			
+//			for(int s=0; s<60; s++) {
+//				System.out.println(m+" 분 "+ s+" 초 ");
+//				if(mm==m && ss==s) {	//초가 지정된 분까지는 멈추지 않아야 한다.
+//					break;
+//				}
+//			}//안쪽 for
+//			if(mm==m) {
+//				break;
+//			}
+//		}//바깥 for
+		
+		System.out.println("강사님 코드==================----------");
+		
+		boolean flag = false;
+		
 		for(int m=0; m<60; m++) {
 			
 			for(int s=0; s<60; s++) {
-				System.out.println(m+" 분 "+ s+" 초 ");
-				if(mm==m && ss==s) {	//초가 지정된 분까지는 멈추지 않아야 한다.
+				System.out.println(m+" 분 "+s+" 초 ");
+				if(mm==m&& ss==s) {
+					flag = !flag;
+					m =60;
 					break;
 				}
-			}//안쪽 for
-			if(mm==m) {
-				break;
-			}
-		}//바깥 for
+			}//안쪽 for문
+//			if(flag) {
+//				break;
+//			}
+		}//바깥 for문
 	}
 
 }
