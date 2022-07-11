@@ -32,7 +32,7 @@ public class Control2_ex2 {
 		if(result>90 && result < 97) { //if(result > 'Z' && result <'a')
 			System.out.println("대문자 영역");
 			result = result - 90;
-			//result - result-'Z'-1;
+			//result = result-'Z'-1;
 			result = 64 +result;
 			//result = 'Z'+result;
 		}
