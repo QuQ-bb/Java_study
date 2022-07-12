@@ -30,6 +30,7 @@ public class Array_ex3 {
 		
 		
 		boolean check = true;
+		
 		String [] names = null;
 		int [] studentNums = null;
 		int[] kors =null;
@@ -65,15 +66,15 @@ public class Array_ex3 {
 				
 				
 				for(int i= 0; i<names.length; i++) {
-					System.out.println("학생 이름을 입력해주세요.");
+					System.out.println(i+1+"학생 이름을 입력해주세요.");
 					names[i] = scan.next();
-					System.out.println("학생 번호를 입력해주세요.");
+					System.out.println(i+1+"학생 번호를 입력해주세요.");
 					studentNums[i] = scan.nextInt();
-					System.out.println("국어 성적을 입력해주세요.");
+					System.out.println(i+1+"국어 성적을 입력해주세요.");
 					kors[i] = scan.nextInt();
-					System.out.println("영어 성적을 입력해주세요.");
+					System.out.println(i+1+"영어 성적을 입력해주세요.");
 					engs[i] = scan.nextInt();
-					System.out.println("수학 성적을 입력해주세요.");
+					System.out.println(i+1+"수학 성적을 입력해주세요.");
 					maths[i] = scan.nextInt();
 					
 					total[i] = kors[i]+engs[i]+maths[i];
@@ -83,8 +84,6 @@ public class Array_ex3 {
 					System.out.println("총점점수:" +total[i]);
 					System.out.println("평균점수:" +avgs[i]);
 				}//for문
-				
-				
 				break;
 				
 			case 2:
@@ -92,18 +91,20 @@ public class Array_ex3 {
 				//모든학생의 정보를 출력한다.
 				for(int i=0; i<names.length; i++) {
 					System.out.println("학생의 이름: "+names[i]+" 학생의 번호: "+studentNums[i]+" 국어성적: "+kors[i]+" 영어성적: "+engs[i]+" 수학성적: "+maths[i]+" 총점: "+total[i]+" 평균점수: "+avgs[i]);
-				
 				}
 				break;
 			case 3:
 				System.out.println("검색할 학생의 번호를 입력해주세요.");
 				int select =scan.nextInt();
 				int index =0;
+				boolean maa = false;
 					for(int i=0; i<names.length; i++) {
 						if(select == studentNums[i]) {
 							index=i;
 							System.out.println("학생의 이름: "+names[index]+" 학생의 번호: "+studentNums[index]+" 국어성적: "+kors[index]+" 영어성적: "+engs[index]+" 수학성적: "+maths[index]+" 총점: "+total[index]+" 평균점수: "+avgs[index]);
-						}else{
+							maa=!maa;
+						}
+						if(maa) {
 							System.out.println("입력한 번호의 학생 정보가 존재하지 않습니다.");
 							break;
 						}
