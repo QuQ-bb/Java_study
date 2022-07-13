@@ -14,10 +14,12 @@ public class Array_5 {
 		//깊은 복사
 		//독립적인 데이터
 		int[]nums3= new int[3];
-		for(int i=0; i<nums1.length; i++) {
+		int i=0;
+		for(i=0; i<nums1.length; i++) {
 			nums3[i] = nums1[i];
-			
+			System.out.println("num3:"+nums3[i]);
 		}
+		
 		System.out.println("nums3=="+nums3[0]);
 		nums2[0] =9;
 		System.out.println(nums1[0]);	//9

@@ -103,17 +103,36 @@ public class Array_ex3 {
 							index=i;
 							System.out.println("학생의 이름: "+names[index]+" 학생의 번호: "+studentNums[index]+" 국어성적: "+kors[index]+" 영어성적: "+engs[index]+" 수학성적: "+maths[index]+" 총점: "+total[index]+" 평균점수: "+avgs[index]);
 							maa=!maa;
+							break;
 						}
 						if(maa) {
 							System.out.println("입력한 번호의 학생 정보가 존재하지 않습니다.");
-							break;
 						}
 					}
 				break;
 			case 4:
 				System.out.println("정보를 삭제할 학생의 번호를 입력해주세요.");
 				int delete = scan.nextInt();
-				int [] copy = new int[names.length-1];
+				
+				String [] nameCopy = new String[names.length-1];
+				int [] studentNumCopy = new int[nameCopy.length];
+				int[] korCopy = new int[nameCopy.length];
+				int [] engCopy = new int[nameCopy.length];
+				int [] mathCopy = new int[nameCopy.length];
+				int [] totalCopy = new int[nameCopy.length];
+				double [] avgCopy = new double[nameCopy.length];
+				
+				for(int i=0; i<names.length; i++) {
+					
+				}
+				
+				
+//				for(int i=0; i<Copy.length; i++) {
+//					if(delete == studentNums[i]) {
+//						Copy[i] = studentNums[i];
+//					}
+					
+				//}
 				
 				
 				
@@ -122,6 +141,30 @@ public class Array_ex3 {
 				
 				break;
 			case 5:
+				//학생 정보 추가
+				
+				//일단 배열의 칸을 1칸 올려준 배열을 선언해준다.
+				String [] nameAdd = new String[names.length+1];
+				int[] studentNumAdd = new int[nameAdd.length];
+				int [] korAdd = new int[nameAdd.length];
+				int [] engAdd = new int[nameAdd.length];
+				int [] mathAdd = new int[nameAdd.length];
+				int [] totalAdd = new int[nameAdd.length];
+				double[] avgAdd = new double[nameAdd.length];
+				
+				//선언해준 배열에 기존에 있던 배열들의 값을 넣어준다.
+				for(int i=0; i<names.length; i++) {
+					nameAdd[i] = names[i];
+					studentNumAdd[i] = studentNums[i];
+					korAdd[i] = kors[i];
+					engAdd[i] = engs[i];
+					mathAdd[i] = maths[i];
+					totalAdd[i] = total[i];
+					avgAdd[i] = avgs[i];
+				}
+				
+				
+				
 				System.out.println("추가할 학생의 이름을 입력해주세요.");
 			case 6: 
 					System.out.println("프로그램을 종료합니다.");
