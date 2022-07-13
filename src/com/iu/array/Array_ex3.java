@@ -27,7 +27,7 @@ public class Array_ex3 {
 		//이름,번호 국어,영어,수학,총점,평균
 		
 		Scanner scan = new Scanner(System.in);
-		
+		System.out.println("프로그램 시작");
 		
 		boolean check = true;
 		
@@ -102,7 +102,7 @@ public class Array_ex3 {
 						if(select == studentNums[i]) {
 							index=i;
 							System.out.println("학생의 이름: "+names[index]+" 학생의 번호: "+studentNums[index]+" 국어성적: "+kors[index]+" 영어성적: "+engs[index]+" 수학성적: "+maths[index]+" 총점: "+total[index]+" 평균점수: "+avgs[index]);
-							maa=!maa;
+							maa=true;
 							break;
 						}
 						if(maa) {
@@ -113,6 +113,15 @@ public class Array_ex3 {
 			case 4:
 				System.out.println("정보를 삭제할 학생의 번호를 입력해주세요.");
 				int delete = scan.nextInt();
+				boolean flag = false;
+				
+				int i=0;
+				for(i=0; i<names.length; i++) {
+					if(delete == studentNums[i] ) {
+						flag = !flag;
+						break;
+					}
+				}
 				
 				String [] nameCopy = new String[names.length-1];
 				int [] studentNumCopy = new int[nameCopy.length];
@@ -121,18 +130,34 @@ public class Array_ex3 {
 				int [] mathCopy = new int[nameCopy.length];
 				int [] totalCopy = new int[nameCopy.length];
 				double [] avgCopy = new double[nameCopy.length];
+				if(flag) {
+					index=0;
+					for(int j=0; j<names.length; j++) {
+						if(i==j) {
+							continue;
+						}//if(i==j)문
+						nameCopy[index] = names[j];
+						studentNumCopy[index] = studentNums[j];
+						korCopy[index] = kors[j];
+						engCopy[index] = engs[j];
+						mathCopy[index] = maths[j];
+						totalCopy[index] = total[j];
+						avgCopy[index] = avgs[j];
+						index++;
+					}//for문
 				
-				for(int i=0; i<names.length; i++) {
-					
+				names =nameCopy;
+				studentNums = studentNumCopy;
+				kors = korCopy;
+				engs = engCopy;
+				maths = mathCopy;
+				total = totalCopy;
+				avgs = avgCopy;
+				
+				}else {
+					System.out.println("학생 삭제중 "+"일치하는 학생의 정보가 없습니다.");
 				}
 				
-				
-//				for(int i=0; i<Copy.length; i++) {
-//					if(delete == studentNums[i]) {
-//						Copy[i] = studentNums[i];
-//					}
-					
-				//}
 				
 				
 				
@@ -141,7 +166,14 @@ public class Array_ex3 {
 				
 				break;
 			case 5:
+				
 				//학생 정보 추가
+				for(int p=0; p<names.length; p++) {
+					if(p != studentNums[p]) {
+						
+					}
+				}
+				
 				
 				//일단 배열의 칸을 1칸 올려준 배열을 선언해준다.
 				String [] nameAdd = new String[names.length+1];
@@ -153,7 +185,7 @@ public class Array_ex3 {
 				double[] avgAdd = new double[nameAdd.length];
 				
 				//선언해준 배열에 기존에 있던 배열들의 값을 넣어준다.
-				for(int i=0; i<names.length; i++) {
+				for(i=0; i<names.length; i++) {
 					nameAdd[i] = names[i];
 					studentNumAdd[i] = studentNums[i];
 					korAdd[i] = kors[i];
@@ -161,12 +193,34 @@ public class Array_ex3 {
 					mathAdd[i] = maths[i];
 					totalAdd[i] = total[i];
 					avgAdd[i] = avgs[i];
+					
 				}
 				
-				
-				
 				System.out.println("추가할 학생의 이름을 입력해주세요.");
+				nameAdd[names.length] =scan.next();
+				System.out.println("추가할 학생의 번호을 입력해주세요.");
+				studentNumAdd[names.length] = scan.nextInt();
+				System.out.println("추가할 학생의 국어성적을 입력해주세요.");
+				korAdd[names.length] = scan.nextInt();
+				System.out.println("추가할 학생의 영어성적을 입력해주세요.");
+				engAdd[names.length] = scan.nextInt();
+				System.out.println("추가할 학생의 수학성적을 입력해주세요.");
+				mathAdd[names.length] = scan.nextInt();
+				
+				totalAdd[names.length] = korAdd[names.length]+engAdd[names.length]+mathAdd[names.length];
+				avgAdd[names.length] = totalAdd[names.length]/3.0;
+				
+				names = nameAdd;
+				studentNums = studentNumAdd;
+				kors = korAdd;
+				engs = engAdd;
+				maths = mathAdd;
+				total = totalAdd;
+				avgs = avgAdd;
+				break;
+				//nameAdd[]
 			case 6: 
+					check =!check;
 					System.out.println("프로그램을 종료합니다.");
 					//프로그램 종료
 			
@@ -174,7 +228,7 @@ public class Array_ex3 {
 			
 		}//while
 		
-		
+		System.out.println("프로그램 종료");
 	}
 
 }
