@@ -168,11 +168,11 @@ public class Array_ex3 {
 			case 5:
 				
 				//학생 정보 추가
-				for(int p=0; p<names.length; p++) {
-					if(p != studentNums[p]) {
-						
-					}
-				}
+//				for(int p=0; p<names.length; p++) {
+//					if(p != studentNums[p]) {
+//						
+//					}
+//				}
 				
 				
 				//일단 배열의 칸을 1칸 올려준 배열을 선언해준다.
